@@ -63,7 +63,7 @@ pp_begin(){
 
 # pp 结束
 pp_end(){
-    echo_green "end!"
+    echo_green "success"
 }
 
 # pp 本地目录代码更新
@@ -129,7 +129,6 @@ pp_status(){
             echo_green $(pwd)/$dir
             cd $dir
             git status
-            echo_ok 0 "update success!"
             cd ../
 
             pp_end
