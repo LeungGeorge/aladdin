@@ -58,8 +58,7 @@ echo_purple()
 
 # pp 开始
 pp_begin(){
-    echo_green "========================================================"
-    echo_green "begin:"
+    echo_green ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>begin:"
 }
 
 # pp 结束
@@ -132,7 +131,7 @@ pp_status(){
             git status
             echo_ok 0 "update success!"
             cd ../
-            echo_green $(pwd)
+
             pp_end
         fi
     done
