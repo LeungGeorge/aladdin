@@ -17,3 +17,10 @@ begin:
         ./pp deploy                       部署当前分支到otp机器（具体查看模块fis配置）
 
 ```
+
+## 日志分片
+
+```
+30 * * * * cd /home/work/github/pp && sh run.sh >> run.log
+0 * * * * cd  /home/work/github/pp && sh splitLog.sh >> splitLog.log
+```
