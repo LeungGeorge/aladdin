@@ -1,4 +1,16 @@
 # pp 使用指南
+## 使用步骤
+1. cp pp run.sh splitlog.sh /mydir/
+2. 添加crontab任务
+
+```
+30 * * * * cd /home/work/github/pp && sh run.sh >> run.log
+0 * * * * cd  /home/work/github/pp && sh splitLog.sh >> splitLog.log
+```
+
+
+## 使用帮助
+### 常用命令
 自动更新，部署当前目录下所有项目
 运行 ./pp 可查看提示
 
@@ -18,7 +30,7 @@ begin:
 
 ```
 
-## 日志分片
+### 日志分片crontab任务
 
 ```
 30 * * * * cd /home/work/github/pp && sh run.sh >> run.log
