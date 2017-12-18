@@ -2,6 +2,7 @@
 #
 pp_company="baidu"
 pp_authore="liangyuanzheng"
+date_time=`date +%Y-%m-%d\ %H:%M:%S`
 
 ##################################################################
 # 代码由此开始 
@@ -21,7 +22,6 @@ usage()
         ./pp status                       更新当前分支状态
         ./pp deploy                       部署当前分支到otp机器（具体查看模块fis配置）
 END
-    exit
 }
 
 # yes or no print
@@ -158,4 +158,6 @@ case C$1 in
         usage
         ;;
 esac
+
+echo_green "update time = $date_time"
 #echo ""
