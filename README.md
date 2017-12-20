@@ -1,7 +1,12 @@
 # pp 使用指南
-## 使用步骤
-1. cp pp run.sh splitlog.sh /mydir/
-2. 添加crontab任务
+## 安装步骤
+1.自定义命令  
+  注意使用当前shell，查看当前shell (echo $SHELL)
+ 
+```
+alias pp="/bin/zsh /home/work/github/pp/pp"
+```
+2.添加crontab任务
 
 ```
 30 * * * * cd /home/work/github/pp && sh run.sh >> run.log
@@ -12,7 +17,7 @@
 ## 使用帮助
 ### 常用命令
 自动更新，部署当前目录下所有项目
-运行 ./pp 可查看提示
+运行 pp 可查看提示
 
 ```
 === pp(@baidu,by liangyuanzheng)  ===
