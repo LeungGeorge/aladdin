@@ -58,7 +58,7 @@ echo_purple()
 
 # aladdin 开始
 aladdin_begin(){
-    echo_green "   ^ ^      |               Hi, friend            |"
+    echo_green "    ^ ^      |              Hi, friend             |"
     echo_green "|    o    .:[I]:_       Welcome use aladdin     ,:[I]:."
     echo_green "|       .: :[C]: :-.     _= made by lyz =_   ,-: :[C]: :."
     echo_green "|     .: : :[O]: : :\`._                  ,.\': : :[O]: : :."
