@@ -126,7 +126,6 @@ aladdin_pull(){
     aladdin_begin
 
     echo_green $(pwd)
-    git status
     git pull
     git status
     echo_ok 0 "update success!"
@@ -139,7 +138,7 @@ aladdin_push(){
     aladdin_begin
 
     echo_green $(pwd)
-    git status
+    git pull
     git add .
     git commit -m "auto added by aladdin"
     git push
