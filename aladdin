@@ -128,7 +128,7 @@ aladdin_push(){
     echo_green $(pwd)
     git pull
     git add .
-    git commit -m "auto added by aladdin"
+    git commit -m "auto added by robot"
     git push
     git status
     echo_ok 0 "update success!"
