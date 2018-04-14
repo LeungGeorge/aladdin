@@ -121,6 +121,34 @@ aladdin_pullcur(){
     done
 }
 
+# aladdin 本目录代码更新
+aladdin_pull(){
+    aladdin_begin
+
+    echo_green $(pwd)
+    git status
+    git pull
+    git status
+    echo_ok 0 "update success!"
+
+    aladdin_end
+}
+
+# aladdin 本目录代码提交，默认comment
+aladdin_push(){
+    aladdin_begin
+
+    echo_green $(pwd)
+    git status
+    git add .
+    git commit -m "auto added by aladdin"
+    git push
+    git status
+    echo_ok 0 "update success!"
+
+    aladdin_end
+}
+
 aladdin_deploy(){
     echo_red $2
     for dir in $(ls $(pwd));do
@@ -164,6 +192,12 @@ case C$1 in
         ;;
     Cpullmaster)
         aladdin_pullmaster
+        ;;
+    Cpush)
+        aladdin_push
+        ;;
+    Cpull)
+        aladdin_pull
         ;;
     Cpullcur)
         aladdin_pullcur
