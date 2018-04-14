@@ -121,18 +121,6 @@ aladdin_pullcur(){
     done
 }
 
-# aladdin 本目录代码更新
-aladdin_pull(){
-    aladdin_begin
-
-    echo_green $(pwd)
-    git pull
-    git status
-    echo_ok 0 "update success!"
-
-    aladdin_end
-}
-
 # aladdin 本目录代码提交，默认comment
 aladdin_push(){
     aladdin_begin
@@ -194,9 +182,6 @@ case C$1 in
         ;;
     Cpush)
         aladdin_push
-        ;;
-    Cpull)
-        aladdin_pull
         ;;
     Cpullcur)
         aladdin_pullcur
