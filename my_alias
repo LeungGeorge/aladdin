@@ -1,0 +1,18 @@
+#!/bin/bash
+#
+#
+#
+# setp 1. add script to ~/.zshrc or ~/.bashrc
+# step 2. on the basis of your *rc file, exec  source ~/.zshrc or  source ~/.bashrc
+#
+#if [ -f /home/work/github/aladdin/my_alias ]; then
+#    . /home/work/github/aladdin/my_alias
+#fi
+
+alias rm='rm -i'
+alias aladdin="/bin/zsh /home/work/github/aladdin/aladdin"
+alias work="cd /home/work/; ll; echo 'current path is:'; pwd;"
+alias godb_self="mysql -h127.0.0.1 -uroot -p"
+alias blog="cd /home/work/github/blog ll; echo 'current path is:'; pwd;"
+
+

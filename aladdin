@@ -71,7 +71,7 @@ aladdin_begin(){
     for i in `seq 0 5 100`
     do
         b=">$b"
-        printf "progress:[%+50s]%d%%\r" $b $i
+        printf "progress:[%-50s]%d%%\r" $b $i
         sleep 0.05
     done
     printf "\n"
