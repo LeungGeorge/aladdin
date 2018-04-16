@@ -13,6 +13,6 @@ alias rm='rm -i'
 alias aladdin="/bin/zsh /home/work/github/aladdin/aladdin"
 alias work="cd /home/work/; ll; echo 'current path is:'; pwd;"
 alias godb_self="mysql -h127.0.0.1 -uroot -p"
-alias blog="cd /home/work/github/blog ll; echo 'current path is:'; pwd;"
+alias blog="cd /home/work/github/blog; ll; echo 'current path is:'; pwd;"
 
 
