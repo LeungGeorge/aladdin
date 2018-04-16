@@ -130,6 +130,7 @@ aladdin_push(){
     git add .
     git commit -m "auto commit by robot"
     git push
+    git pull
     git status
     echo_ok 0 "update success!"
 
