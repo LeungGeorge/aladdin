@@ -1,5 +1,9 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
+# 引入工具包
+. tools/utils.sh
+
+# 全局变量定义
 aladdin_company="baidu"
 aladdin_author="liangyuanzheng"
 date_time=`date +%Y-%m-%d\ %H:%M:%S`
@@ -24,41 +28,9 @@ usage()
 END
 }
 
-# yes or no print
-echo_ok()
-{
-    if [ $1 -eq 0 ];then
-        echo -e "\033[32;1m$2\033[0m"
-    else
-        echo -e "\033[31;1m$3\033[0m"
-        exit 1
-    fi
-}
-# 红色打印
-echo_red()
-{
-    while [ "$1" != "" ];do
-        echo -e "\033[31;1m$1\033[0m"
-        shift
-    done
-}
-# 绿色打印
-echo_green()
-{
-    while [ "$1" != "" ];do
-        echo -e "\033[32;1m$1\033[0m"
-        shift
-    done
-}
-# 粉色打印
-echo_purple()
-{
-    echo -e "\033[35;1m$1\033[0m"
-}
-
 # aladdin 开始
 aladdin_begin(){
-    echo_green "    ^ ^      |              Hi, friend             |"
+    echo_green "|   ^ ^                   Hi, $USER                    "
     echo_green "|    o    .:[I]:_       Welcome use aladdin     ,:[I]:."
     echo_green "|       .: :[C]: :-.     _= made by lyz =_   ,-: :[C]: :."
     echo_green "|     .: : :[O]: : :\`._                  ,.\': : :[O]: : :."
@@ -71,10 +43,10 @@ aladdin_begin(){
     for i in `seq 0 5 100`
     do
         b=">$b"
-        if [ "$(uname)"=="Darwin"  ]; then
+        if [ "$(uname)"=="Darwin" ]; then
             # Do something under Mac OS X platform   
             printf "progress:[%+50s]%d%%\r" $b $i
-        elif [ "$(expr substr $(uname -s) 1 5)"=="Linux"  ]; then
+        elif [ "$(expr substr $(uname -s) 1 5)"=="Linux" ]; then
             # Do something under GNU/Linux platform
             printf "progress:[%-50s]%d%%\r" $b $i
         else
