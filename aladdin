@@ -71,7 +71,16 @@ aladdin_begin(){
     for i in `seq 0 5 100`
     do
         b=">$b"
-        printf "progress:[%-50s]%d%%\r" $b $i
+        if [ "$(uname)"=="Darwin"  ]; then
+            # Do something under Mac OS X platform   
+            printf "progress:[%+50s]%d%%\r" $b $i
+        elif [ "$(expr substr $(uname -s) 1 5)"=="Linux"  ]; then
+            # Do something under GNU/Linux platform
+            printf "progress:[%-50s]%d%%\r" $b $i
+        else
+            # Do something under other platform
+            printf "progress:[%-50s]%d%%\r" $b $i
+        fi
         sleep 0.05
     done
     printf "\n"
