@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 #
-# 引入工具包
-. tools/utils.sh
 
 # 全局变量定义
 aladdin_company="baidu"
@@ -10,6 +8,42 @@ date_time=`date +%Y-%m-%d\ %H:%M:%S`
 
 ##################################################################
 # 代码由此开始 
+
+# 红色打印
+echo_red()
+{
+    while [ "$1" != "" ];do
+        echo -e "\033[31;1m$1\033[0m"
+        shift
+    done
+}
+
+# 绿色打印
+echo_green()
+{
+    while [ "$1" != "" ];do
+        echo -e "\033[32;1m$1\033[0m"
+        shift
+    done
+}
+
+# 粉色打印
+echo_purple()
+{
+    echo -e "\033[35;1m$1\033[0m"
+}
+
+
+# yes or no print
+echo_ok()
+{
+    if [ $1 -eq 0 ];then
+        echo -e "\033[32;1m$2\033[0m"
+    else
+        echo -e "\033[31;1m$3\033[0m"
+        exit 1
+    fi
+}
 
 # 打印用法
 usage()
@@ -150,6 +184,47 @@ aladdin_status(){
     done
 }
 
+aladdin_preview(){
+    aladdin_begin
+    echo_red $2
+
+    if [ "$2" = "blog" ];then
+        hexo g
+        hexo s --debug
+    elif [ "$2" = "doraemon" ];then
+        rake serve
+    fi
+
+    aladdin_end
+}
+
+aladdin_publish(){
+    aladdin_begin
+    echo_red $2
+
+    if [ "$2" = "blog" ];then
+        git pull
+
+        hexo clean
+        hexo g
+        hexo d
+
+        cp baidu-verify-F90255460A.txt ./public/
+        git add --all
+        git commit -m "auto commit"
+        git push origin hexo
+    elif [ "$2" = "doraemon" ];then
+        git pull
+        git add .
+        git commit -m "auto commit by robot"
+        git push
+        git pull
+        git status
+    fi
+
+    aladdin_end
+}
+
 ##################################################################
 # 一切从这里开始
 # -1. logo
@@ -170,6 +245,12 @@ case C$1 in
         ;;
     Cstatus)
         aladdin_status
+        ;;
+    Cpreview)
+        aladdin_preview $1 $2
+        ;;
+    Cpublish)
+        aladdin_publish $1 $2
         ;;
     C|Chelp)
         usage
