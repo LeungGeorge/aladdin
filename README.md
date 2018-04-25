@@ -17,12 +17,12 @@ alias aladdin="/bin/zsh /home/work/github/aladdin/aladdin"
 ## 使用帮助
 ### 常用命令
 自动更新，部署当前目录下所有项目
-运行 pp 可查看提示
+运行 aladdin 可查看提示
 
 
 ```
-=== aladdin(@baidu,by liangyuanzheng)  ===
-|   ^ ^                   Hi, liangyuanzheng
+=== aladdin(@baidu,by leunggeorge)  ===
+|   ^ ^                   Hi, leunggeorge
 |    o    .:[I]:_       Welcome use aladdin     ,:[I]:.
 |       .: :[C]: :-.     _= made by lyz =_   ,-: :[C]: :.
 |     .: : :[O]: : :`._                  ,.\': : :[O]: : :.
@@ -33,7 +33,7 @@ alias aladdin="/bin/zsh /home/work/github/aladdin/aladdin"
 |
 progress:[>>>>>>>>>>>>>>>>>>>>>                             ]100%
 # 自动化更新工具 #
-接口人: liangyuanzheng (有问题找ta)
+接口人: leunggeorge (有问题找ta)
   用法:
         <普通命令 for common>
         aladdin [help]                       打印我

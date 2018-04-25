@@ -3,7 +3,7 @@
 
 # 全局变量定义
 aladdin_company="baidu"
-aladdin_author="liangyuanzheng"
+aladdin_author="leunggeorge"
 date_time=`date +%Y-%m-%d\ %H:%M:%S`
 
 ##################################################################
