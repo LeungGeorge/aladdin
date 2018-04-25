@@ -159,7 +159,7 @@ aladdin_deploy(){
 
         curDir=`pwd`
         echo_green "$curDir"
-        fis3 release $2
+        fis3 release $2 -w
         echo_ok 0 "update success!"
         echo_green $(pwd)
 
