@@ -45,12 +45,11 @@ progress:[>>>>>>>>>>>>>>>>>>>>>                             ]100%
         aladdin status                       更新当前分支状态
         aladdin deploy [dev]                 部署当前分支到otp机器（具体查看模块fis配置）
 update time = xxxx-xx-xx xx:xx:xx
-
 ```
 
 ### 日志分片crontab任务
 
 ```
-30 * * * * cd /home/work/github/pp && sh run.sh >> run.log
-0 * * * * cd  /home/work/github/pp && sh splitLog.sh >> splitLog.log
+30 * * * * cd /home/work/github/aladdin/ && sh run.sh >> run.log
+0 * * * * cd  /home/work/github/aladdin/ && sh splitLog.sh >> splitLog.log
 ```
