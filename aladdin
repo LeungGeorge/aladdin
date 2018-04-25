@@ -154,17 +154,36 @@ aladdin_push(){
 
 aladdin_deploy(){
     echo_red $2
+    if [ -f "fis-conf.js" ];then
+        aladdin_begin
+
+        curDir=`pwd`
+        echo_green "$curDir"
+        fis3 release $2
+        echo_ok 0 "update success!"
+        echo_green $(pwd)
+
+        aladdin_end
+    else
+        echo_red "no fis conf file."
+    fi
+
+    exit
     for dir in $(ls $(pwd));do
         if [ -d $dir ];then
-            aladdin_begin
+            if [ -f "fis-conf.js" ];then
+                aladdin_begin
 
-            echo_green $(pwd)/$dir
-            cd $dir
-            fis3 release $2
-            echo_ok 0 "update success!"
-            cd ../
-            echo_green $(pwd)
-            aladdin_end
+                echo_green $(pwd)/$dir
+                cd $dir
+                fis3 release $2
+                echo_ok 0 "update success!"
+                cd ../
+                echo_green $(pwd)
+                aladdin_end
+            else
+                echo_red "no fis conf file."
+            fi
         fi
     done
 }
