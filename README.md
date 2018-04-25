@@ -1,10 +1,10 @@
 # pp 使用指南
 ## 安装步骤
 1.自定义命令  
-  注意使用当前shell，查看当前shell (echo $SHELL)
+  注意使用当前shell，查看当前shell (echo $SHELL)，后面aladdin的路径修改为你自己的路径
  
 ```
-alias pp="/bin/zsh /home/work/github/pp/pp"
+alias aladdin="/bin/zsh /home/work/github/aladdin/aladdin"
 ```
 2.添加crontab任务
 
@@ -19,19 +19,32 @@ alias pp="/bin/zsh /home/work/github/pp/pp"
 自动更新，部署当前目录下所有项目
 运行 pp 可查看提示
 
+
 ```
-=== pp(@baidu,by liangyuanzheng)  ===
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>begin:
+=== aladdin(@baidu,by liangyuanzheng)  ===
+|   ^ ^                   Hi, liangyuanzheng
+|    o    .:[I]:_       Welcome use aladdin     ,:[I]:.
+|       .: :[C]: :-.     _= made by lyz =_   ,-: :[C]: :.
+|     .: : :[O]: : :`._                  ,.\': : :[O]: : :.
+| _..: : : :[D]: : : : : :-._________.-: : : : : :[D]: : : :-._
+| ^^^^^^^^^^[E]^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[E]^^^^^^^^^^
+|           [|]                                   [|]
+|   ~~^-_~^~|||~~^_~^~_~^-~_^~-^~_^~~-^~_~^~-^~_^~|||~^-~_~^--
+|
+progress:[>>>>>>>>>>>>>>>>>>>>>                             ]100%
 # 自动化更新工具 #
 接口人: liangyuanzheng (有问题找ta)
   用法:
         <普通命令 for common>
-        pp [help]                       打印我
-        pp pullmaster                   切换到master分支并更新
-        pp pullcur                      更新当前分支
-        pp status                       更新当前分支状态
-        pp deploy                       部署当前分支到otp机器（具体查看模块fis配置）
-update time = 2017-12-21 13:22:15
+        aladdin [help]                       打印我
+        aladdin pullmaster                   切换到master分支并更新
+        aladdin pullcur                      更新当前分支
+        aladdin push                         push当前分支
+        aladdin preview [blog|doraemon]      预览当前目录的blog（hexo blog；doraemon周刊）
+        aladdin publish [blog|doraemon]      发布当前目录的blog（hexo blog；doraemon周刊）
+        aladdin status                       更新当前分支状态
+        aladdin deploy [dev]                 部署当前分支到otp机器（具体查看模块fis配置）
+update time = xxxx-xx-xx xx:xx:xx
 
 ```
 

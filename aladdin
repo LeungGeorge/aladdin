@@ -57,8 +57,11 @@ usage()
         aladdin [help]                       打印我
         aladdin pullmaster                   切换到master分支并更新
         aladdin pullcur                      更新当前分支
+        aladdin push                         push当前分支
+        aladdin preview [blog|doraemon]      预览当前目录的blog（hexo blog；doraemon周刊）
+        aladdin publish [blog|doraemon]      发布当前目录的blog（hexo blog；doraemon周刊）
         aladdin status                       更新当前分支状态
-        aladdin deploy                       部署当前分支到otp机器（具体查看模块fis配置）
+        aladdin deploy [dev]                 部署当前分支到otp机器（具体查看模块fis配置）
 END
 }
 
