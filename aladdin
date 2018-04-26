@@ -128,7 +128,6 @@ aladdin_pullcur(){
 
             echo_green $(pwd)/$dir
             cd $dir
-            git status
             git pull
             git status
             echo_ok 0 "update success!"
