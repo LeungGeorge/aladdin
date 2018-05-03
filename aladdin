@@ -41,7 +41,6 @@ echo_ok()
         echo -e "\033[32;1m$2\033[0m"
     else
         echo -e "\033[31;1m$3\033[0m"
-        exit 1
     fi
 }
 
@@ -156,6 +155,26 @@ aladdin_push(){
 
 aladdin_deploy(){
     echo_red $2
+    for dir in $(ls $(pwd));do
+        if [ -d $dir ];then
+            echo_green $(pwd)/$dir
+            cd $dir
+
+            if [ -f "fis-conf.js" ];then
+                aladdin_begin
+
+                fis3 release $2
+                echo_ok 0 "update success!"
+                echo_green $(pwd)
+                aladdin_end
+            else
+                echo_red "no fis conf file."
+            fi
+
+            cd ../
+        fi
+    done
+
     if [ -f "fis-conf.js" ];then
         aladdin_begin
 
@@ -169,25 +188,6 @@ aladdin_deploy(){
     else
         echo_red "no fis conf file."
     fi
-
-    exit
-    for dir in $(ls $(pwd));do
-        if [ -d $dir ];then
-            if [ -f "fis-conf.js" ];then
-                aladdin_begin
-
-                echo_green $(pwd)/$dir
-                cd $dir
-                fis3 release $2
-                echo_ok 0 "update success!"
-                cd ../
-                echo_green $(pwd)
-                aladdin_end
-            else
-                echo_red "no fis conf file."
-            fi
-        fi
-    done
 }
 
 aladdin_status(){
