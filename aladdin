@@ -89,7 +89,7 @@ aladdin_begin(){
             # Do something under other platform
             printf "progress:[%-50s]%d%%\r" $b $i
         fi
-        sleep 0.05
+        #sleep 0.05
     done
     printf "\n"
     #echo_green ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
