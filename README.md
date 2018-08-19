@@ -1,4 +1,4 @@
-# aladdin 使用指南
+# aladdin 使用指南 
 ## 安装步骤
 1.自定义命令  
   注意使用当前shell，查看当前shell (echo $SHELL)，后面aladdin的路径修改为你自己的路径
